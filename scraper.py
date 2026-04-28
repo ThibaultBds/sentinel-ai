@@ -2,7 +2,11 @@ import feedparser
 import requests
 
 # TON WEBHOOK (CORRECT)
-WEBHOOK_URL = "https://discord.com/api/webhooks/1493322194086920344/CGzRW3mhMULKuhN_dZQ5JsAkCeshHE_tn6GLCf95Mqb8AXspeZuLoveGHoaG4ZwYG1NH"
+from dotenv import load_dotenv
+
+load_dotenv()
+import os 
+WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK")
 
 url = "https://www.cert.ssi.gouv.fr/feed/"
 feed = feedparser.parse(url)
